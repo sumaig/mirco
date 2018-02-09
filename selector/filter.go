@@ -1,7 +1,7 @@
 package selector
 
 import (
-	"wonder-super/lib/mirco/registry"
+	"github.com/sumaig/mirco/registry"
 )
 
 // FilterEndpoint is an endpoint based Select Filter which will

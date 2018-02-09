@@ -4,7 +4,7 @@ package selector
 import (
 	"errors"
 
-	"wonder-super/lib/mirco/registry"
+	"github.com/sumaig/mirco/registry"
 )
 
 // Selector builds on the registry as a mechanism to pick nodes

@@ -7,7 +7,7 @@ import (
 	"time"
 	"log"
 
-	"wonder-super/lib/mirco/registry"
+	"github.com/sumaig/mirco/registry"
 
 	"github.com/pborman/uuid"
 )

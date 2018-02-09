@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"strings"
 
-	"wonder-super/lib/mirco/registry"
+	"github.com/sumaig/mirco/registry"
 )
 
 var (

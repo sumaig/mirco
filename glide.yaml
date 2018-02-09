@@ -1,0 +1,9 @@
+package: github.com/sumaig/mirco
+import:
+- package: github.com/coreos/etcd
+  subpackages:
+  - clientv3
+  - clientv3/concurrency
+  - etcdserver/api/v3rpc/rpctypes
+- package: github.com/mitchellh/hashstructure
+- package: github.com/pborman/uuid

@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"wonder-super/lib/mirco/registry"
-	"wonder-super/lib/mirco/selector"
+	"github.com/sumaig/mirco/registry"
+	"github.com/sumaig/mirco/selector"
 )
 
 /*

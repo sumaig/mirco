@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"wonder-super/lib/mirco/registry"
+	"github.com/sumaig/mirco/registry"
 )
 
 func init() {

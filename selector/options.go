@@ -3,7 +3,7 @@ package selector
 import (
 	"context"
 
-	"wonder-super/lib/mirco/registry"
+	"github.com/sumaig/mirco/registry"
 )
 
 type Options struct {

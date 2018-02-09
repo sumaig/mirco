@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"wonder-super/lib/mirco/registry"
+	"github.com/sumaig/mirco/registry"
 )
 
 type Option func(*Options)
