@@ -32,7 +32,7 @@ type rpcServer struct {
 
 var (
 	DefaultAddress        = ":0"
-	DefaultName           = "wonder-server"
+	DefaultName           = "go-mirco"
 	DefaultVersion        = "1.0.0"
 	DefaultId             = uuid.NewUUID().String()
 	DefaultServer  		  = newrpcServer()
@@ -216,6 +216,5 @@ func(s *rpcServer) Stop() {
 }
 
 func (s *rpcServer) Leader() ([]*registry.Service, error){
-	// log.Println(s.opts.Name)
 	return s.opts.Registry.GetLeaderService(s.opts.Name)
 }
