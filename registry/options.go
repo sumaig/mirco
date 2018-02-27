@@ -8,6 +8,8 @@ import (
 
 type Options struct {
 	Addrs     []string
+	Username  string
+	Password  string
 	Timeout   time.Duration
 	Secure    bool
 	TLSConfig *tls.Config
@@ -28,6 +30,18 @@ type RegisterOptions struct {
 func Addrs(addrs ...string) Option {
 	return func(o *Options) {
 		o.Addrs = addrs
+	}
+}
+
+func User(username string) Option {
+	return func(o *Options) {
+		o.Username = username
+	}
+}
+
+func Password(password string) Option {
+	return func(o *Options) {
+		o.Password = password
 	}
 }
 

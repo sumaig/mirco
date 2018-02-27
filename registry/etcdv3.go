@@ -322,6 +322,11 @@ func newEtcdv3Registry(opts ...Option) Registry {
 		config.Endpoints = cAddrs
 	}
 
+	if options.Username != "" && options.Password != ""{
+		config.Username = options.Username
+		config.Password = options.Password
+	}
+
 	cli, _ := clientv3.New(config)
 	e := &etcdv3Registry{
 		client:   cli,
