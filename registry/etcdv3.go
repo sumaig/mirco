@@ -51,7 +51,7 @@ func servicePath(s string) string {
 
 func (e *etcdv3Registry) Deregister(s *Service) error {
 	if len(s.Nodes) == 0 {
-		return errors.New("Require at least one node")
+		return errors.New("require at least one node")
 	}
 
 	e.Lock()
@@ -75,7 +75,7 @@ func (e *etcdv3Registry) Deregister(s *Service) error {
 
 func (e *etcdv3Registry) Register(s *Service, opts ...RegisterOption) error {
 	if len(s.Nodes) == 0 {
-		return errors.New("Require at least one node")
+		return errors.New("require at least one node")
 	}
 
 	var leaseNotFound bool
@@ -155,7 +155,7 @@ func (e *etcdv3Registry) Register(s *Service, opts ...RegisterOption) error {
 	return nil
 }
 
-func (e *etcdv3Registry) GetLeaderService(name string) ([]*Service, error) {
+func (e *etcdv3Registry) Leader(name string) ([]*Service, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), e.options.Timeout)
 	defer cancel()
 	session, err := concurrency.NewSession(e.client)
@@ -204,7 +204,7 @@ func (e *etcdv3Registry) GetLeaderService(name string) ([]*Service, error) {
 
 }
 
-func (e *etcdv3Registry) GetService(name string) ([]*Service, error) {
+func (e *etcdv3Registry) Get(name string) ([]*Service, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), e.options.Timeout)
 	defer cancel()
 
@@ -245,7 +245,7 @@ func (e *etcdv3Registry) GetService(name string) ([]*Service, error) {
 	return services, nil
 }
 
-func (e *etcdv3Registry) ListServices() ([]*Service, error) {
+func (e *etcdv3Registry) List() ([]*Service, error) {
 	var services []*Service
 	nameSet := make(map[string]struct{})
 

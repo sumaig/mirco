@@ -11,9 +11,9 @@ import (
 type Registry interface {
 	Register(*Service, ...RegisterOption) error
 	Deregister(*Service) error
-	GetService(string) ([]*Service, error)
-	GetLeaderService(string) ([]*Service, error)
-	ListServices() ([]*Service, error)
+	Get(string) ([]*Service, error)
+	Leader(string) ([]*Service, error)
+	List() ([]*Service, error)
 	Watch() (Watcher, error)
 	String() string
 }
@@ -43,13 +43,17 @@ func Deregister(s *Service) error {
 }
 
 // Retrieve a service. A slice is returned since we separate Name/Version.
-func GetService(name string) ([]*Service, error) {
-	return DefaultRegistry.GetService(name)
+func Get(name string) ([]*Service, error) {
+	return DefaultRegistry.Get(name)
+}
+
+func Leader(name string) ([]*Service, error) {
+	return DefaultRegistry.Leader(name)
 }
 
 // List the services. Only returns service names
-func ListServices() ([]*Service, error) {
-	return DefaultRegistry.ListServices()
+func List() ([]*Service, error) {
+	return DefaultRegistry.List()
 }
 
 // Watch returns a watcher which allows you to track updates to the registry.

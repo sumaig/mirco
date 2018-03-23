@@ -14,7 +14,6 @@ import (
 
 type Server interface {
 	Options() Options
-	Leader() ([]*registry.Service, error)
 	Register() error
 	Deregister() error
 	Start()
@@ -213,8 +212,4 @@ func (s *rpcServer) run(exit chan bool) {
 func(s *rpcServer) Stop() {
 	s.Deregister()
 	close(s.exit)
-}
-
-func (s *rpcServer) Leader() ([]*registry.Service, error){
-	return s.opts.Registry.GetLeaderService(s.opts.Name)
 }
