@@ -101,7 +101,7 @@ func (c *cacheSelector) get(service string) ([]*registry.Service, error) {
 	// cache miss or ttl expired
 
 	// now ask the registry
-	services, err := c.so.Registry.GetService(service)
+	services, err := c.so.Registry.Get(service)
 	if err != nil {
 		return nil, err
 	}

@@ -29,7 +29,7 @@ func (r *defaultSelector) Select(service string, opts ...SelectOption) (Next, er
 	}
 
 	// get the service
-	services, err := r.so.Registry.GetService(service)
+	services, err := r.so.Registry.Get(service)
 	if err != nil {
 		return nil, err
 	}
